@@ -1,0 +1,357 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: y proximity;
+
+}
+
+
+body {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    overflow-x: hidden;
+
+    background: #111;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+}
+
+
+
+/* =====================================
+   MÀN HÌNH MỞ THIỆP
+===================================== */
+
+#opening {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background: #f5f1eb;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+
+}
+
+
+#opening.hidden {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+}
+
+
+.opening-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.opening-small {
+
+    margin-bottom: 22px;
+
+    color: #654321;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.opening-content h1 {
+
+    color: #432a18;
+
+    font-size: clamp(
+        44px,
+        12vw,
+        90px
+    );
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+
+}
+
+
+#openInvitation {
+
+    margin-top: 35px;
+
+    padding: 14px 28px;
+
+    border: 1px solid #432a18;
+
+    background: transparent;
+
+    color: #432a18;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+#openInvitation:hover {
+
+    background: #432a18;
+
+    color: #fff;
+
+}
+
+
+
+/* =====================================
+   WEBSITE THIỆP
+===================================== */
+
+#wedding {
+
+    width: 100%;
+
+    background: #111;
+
+}
+
+
+.wedding-section {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100svh;
+
+    min-height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #111;
+
+    scroll-snap-align: start;
+
+}
+
+
+
+/* =====================================
+   VIDEO
+===================================== */
+
+.wedding-video {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    background: #111;
+
+}
+
+
+
+/* =====================================
+   NÚT NHẠC
+===================================== */
+
+.music-button {
+
+    position: fixed;
+
+    z-index: 900;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.75);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(8px);
+
+    color: #fff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+.music-button:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+.music-button.playing {
+
+    animation:
+        musicRotate 3s linear infinite;
+
+}
+
+
+@keyframes musicRotate {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .wedding-section {
+
+        height: 100svh;
+
+        min-height: 100svh;
+
+    }
+
+
+    .wedding-video {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
+    }
+
+
+    .music-button {
+
+        right: 16px;
+
+        bottom: 16px;
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 18px;
+
+    }
+
+}
